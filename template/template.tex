@@ -1,0 +1,63 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Kurzer Titel}
+
+Beschreibung
+
+\subsection*{Beispiel}
+\begin{verbatim}
+Input auf der Konsole, z.B.
+sep> command 1 2
+\end{verbatim}
+
+Datei \texttt{datei.txt}:
+\begin{lstlisting}[frame=single]
+Lorem
+Ipsum
+\end{lstlisting}
+
+
+
+\subsubsection*{Ausgabe}
+\begin{verbatim}
+Konsolen Ausgabe, z.B.
+Result: done!
+\end{verbatim}
+
+\subsection*{Aufruf}
+\texttt{./ag config.txt}
+
+\subsection*{Bewertung}
+\begin{itemize}
+ \item Dokumentation und Programmierstil: 1 Punkt
+ \item Einhalten der OOP Konzepte: 1 Punkt
+ \item Struktur \& Korrektheit: 1 Punkt
+\end{itemize}
+
+\newpage
+
+
+\end{document}
