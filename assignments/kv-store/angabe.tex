@@ -1,0 +1,72 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{../../template/tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Einfache Datenbank}
+
+Entwickle eine einfache Datenbank in Form eines Key-Value Stores. Das Programm kann Werte mit verschiedenen Datentypen speichern, arbeiten und sie wieder ausgeben. Dafür soll es 3 Befehle geben.
+
+\begin{description}
+ \item[set $<$name$>$ $<$type$>$ $<$value$>$] Speichert eine Variable vom Typ \textit{type} in der Datenbank. \textit{type} kann dabei \texttt{``Integer''} oder \texttt{``String''} sein. Ist ein Wert bereits vorhanden, wird er überschrieben.
+ \item[get $<$name$>$] Zeigt den Datentyp und Wert der Variable an. Existiert die Variable nicht, soll der Befehl ignoriert werden.
+ \item[add $<$name1$>$ $<$name2$>$] Addiert zur Variable \textit{name1} den Wert der Variable \textit{name2}, falls beide vom Typ \texttt{``Integer''} sind. Sind beide vom \texttt{``String''}, sollen die Strings aneinander gehängt werden. In allen anderen Fällen soll ``Incompatible datatypes'' ausgegeben werden. 
+\end{description}
+
+Bei der Eingabe von \texttt{bye} oder EOF soll das Programm beendet werden. Der Datentyp \texttt{``Integer''} muss nur Ganzzahlen speichern können, keine Kommazahlen.
+
+\subsection*{Beispiel}
+\begin{verbatim}
+> set a Integer 3
+> set b Integer 2
+> set hello String "Hello"
+> set world String "World"
+> get a
+Integer: 3
+> set b 4
+> add a b
+> get a
+Integer: 7
+> add hello world
+> get hello
+String: HelloWorld
+> get world
+String: World
+> add hello a
+Incompatible datatypes
+\end{verbatim}
+
+\subsection*{Aufruf}
+\texttt{./db}
+
+\subsection*{Bewertung}
+\begin{itemize}
+ \item Dokumentation und Programmierstil: 1 Punkt
+ \item Einhalten der OOP Konzepte: 1 Punkt
+ \item Struktur \& Korrektheit: 1 Punkt
+\end{itemize}
+
+\newpage
+
+
+\end{document}

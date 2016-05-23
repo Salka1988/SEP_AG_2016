@@ -1,0 +1,5 @@
+* Falsche Anzahl an Parametern
+* Set Integer mit Text
+* Add/Get mit unbekannten Variablen
+* Datentyp einer Variable ändern
+* Memory Leaks
