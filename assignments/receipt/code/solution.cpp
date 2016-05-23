@@ -67,8 +67,10 @@ int main() {
         
         if(tokens[0] == "add" && tokens.size() >= 4) {
           if(receipts.count(tokens[1])) {
-            Entry e(tokens[2], stof(tokens[3]));
-            receipts[tokens[1]]->add(e);   
+            try {
+              Entry e(tokens[2], stof(tokens[3]));
+              receipts[tokens[1]]->add(e);   
+            } catch(...) {}
           } else cout << UNKNOWN_NAME << endl;
         }
         
