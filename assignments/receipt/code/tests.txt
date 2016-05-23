@@ -1,0 +1,9 @@
+* New ohne Parameter
+* Print ohne Parameter
+* Add ohne Parameter
+* Add mit nur einem Parameter
+* Add mit nur zwei Parametern
+* Add mit ungültiger Rechnung
+* Add mit ungültiger Zahl
+* Memory Leaks
+
