@@ -1,4 +1,4 @@
-* Add ohne Parameter
-* Add mit nur einem Parameter
+* Nicht true oder false als Parameter für Pflanzen
+* Keine Zahl als Alter bei Fischen
 * Memory Leaks
 

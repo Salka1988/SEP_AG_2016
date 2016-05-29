@@ -1,0 +1,8 @@
+* start wenn nicht alle erforderlichen Personen drinnen sind
+* board nach start auf den gleichen Zug
+* board vor create
+* board mit einem ungültigen Wert
+* start ohne Parameter
+* board ohne Parameter
+* Memory Leaks
+
