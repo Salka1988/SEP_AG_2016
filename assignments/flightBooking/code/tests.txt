@@ -1,0 +1,10 @@
+* create ohne Parameter
+* create mit string als maxPassengers
+* takeoff ohne Parameter
+* book ohne Parameter
+* book mit nur einem Parameter
+* book mit ungültiger Flugnummer
+* cancel mit unbesetzter Sitznummer
+* takeoff after cancel
+* Memory Leaks
+

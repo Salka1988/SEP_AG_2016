@@ -1,0 +1,63 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{../../template/tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Flugbuchungssoftware}
+
+Schreibe ein einfaches Programm um die Buchung von Flügen zu verwalten. 
+
+\begin{description}
+ \item[create $<$flightNumber$>$ $<$maxPassengers$>$] Erstellt einen neuen Flug mit der angegebenen Nummer und der maximalen Passagieranzahl $maxPassengers$.
+ \item[book $<$flightNumber$>$ $<$name$>$] Fügt den Passagier $name$ zum Flug $flightNumber$ hinzu. Der Passagier erhält dabei die nächste freie Sitzplatznummer. Diese beginnt beim ersten Passagier eines Fluges mit 1 und endet bei maxPassenger.
+ \item[cancel $<$flightNumber$>$ $<$seatNumber$>$] Entfernt den Passagier auf diesem Sitzplatz von Flug $<$flightNumber$>$.
+ \item[takeoff $<$flightNumber$>$] Zeigt alle Passagiere des Fluges mit ihrer Sitzplatznummer an. Der Flug ist nach dem takeoff nicht mehr verfübar.
+\end{description}
+
+Sollte bei \texttt{book}, \texttt{cancel} oder \texttt{takeoff} die Flugnummer nicht existieren, soll ``Flight does not exist!'' ausgegeben werden. Sollte bei \texttt{cancel} die Sitzplatznummer nicht existieren, soll ``Seat not occupied!'' ausgegeben werden. Wenn bei $book$ die maximale Passagieranzahl überschritten wird soll ``Flight fully booked!``ausgegeben werden. Bei der Eingabe von \texttt{quit} oder EOF soll das Programm beendet werden.
+
+\subsection*{Beispiel}
+\begin{verbatim}
+> new AF2311 20
+> book AF2311 Meier
+> book BADNUMBER Meier
+Flight does not exist!
+> book AF2311 Huber
+> book AF2311 Mueller
+> cancel AF2311 6
+Seat not occupied!
+> cancel AF2311 2
+> takeoff AF2311
+1: Meier
+3: Mueller
+\end{verbatim}
+
+\subsection*{Aufruf}
+\texttt{./flightBooking}
+
+\subsection*{Bewertung}
+Dokumentation \& Programmierstil,  Dokumentation \& Programmierstil, und Struktur \& Korrektheit (je 1 Punkt)
+\newpage
+
+
+\end{document}
