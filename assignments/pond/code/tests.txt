@@ -1,0 +1,4 @@
+* Add ohne Parameter
+* Add mit nur einem Parameter
+* Memory Leaks
+
