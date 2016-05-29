@@ -1,0 +1,65 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Task Liste}
+
+Entwickle ein Programm, welches dazu dient Aufgaben zu sortieren. Es wird ein File angegeben in dem jeder Task eine Zeile darstellt. Ein Task besteht immer aus einem Namen und einer Priorität getrennt durch ein Leerzeichen. Zusätzlich kann ein datum im Format YYYY-MM-DD angegeben werden. Ist keines angegeben soll 1970-01-01 verwendet werden.
+
+Eine Beispiel Eingabedatei \texttt{tasks.txt}:
+\begin{lstlisting}[frame=single]
+SEP_Abgabegespraech 1 
+Semester_Ende 2 2016-07-01
+anderer_eintrag -12 2038-01-19
+\end{lstlisting}
+
+Das Programm soll diese Datei einlesen und die Tasks nach Priorität sortiert wieder ausgeben.
+
+Sollte ein Fehler Auftreten (Priorität keine Zahl, fehlende Priorität, File nicht gefunden) soll
+\begin{verbatim}
+ERR
+\end{verbatim}
+ausgegeben werden.
+
+\subsubsection*{Ausgabe}
+\begin{verbatim}
+anderer_eintrag -12 2038-01-19
+SEP_Abgabegespräch 1 1970-01-01
+Semester_Ende 2 2016-07-01
+\end{verbatim}
+
+\subsection*{Aufruf}
+\texttt{./ag tasks.txt}
+
+\subsection*{Bewertung}
+\begin{itemize}
+ \item Dokumentation und Programmierstil: 1 Punkt
+ \item Einhalten der OOP Konzepte: 1 Punkt
+ \item Struktur \& Korrektheit: 1 Punkt
+\end{itemize}
+
+\newpage
+
+
+\end{document}
