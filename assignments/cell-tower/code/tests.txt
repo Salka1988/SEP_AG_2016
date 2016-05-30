@@ -1,0 +1,7 @@
+* Ungültige Anzahl Parameter
+* Ungültige Paramater (keine Gleitkommazahlen)
+* Nicht vorhandener Provider
+* Ungültige Datei
+* Leere Datei
+* Nicht vorhandene Datei
+
