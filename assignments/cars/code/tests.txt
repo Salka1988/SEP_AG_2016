@@ -1,0 +1,5 @@
+* Datei existiert nicht
+* Datei enthält ungültige Werte (z.B. falsche Anzahl, Geschwindigkeit ist kein Integer)
+* Duplikate richtig entfernt
+* Sortierung richtig
+

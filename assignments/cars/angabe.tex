@@ -1,0 +1,82 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{../../template/tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Autos}
+
+Schreibe ein Programm, das eine Liste von Autos aus einer Datei einliest. Jede Zeile beschreibt ein Auto und hat das Format \texttt{<brand> <speed> <color>}. Implementiere drei Funktionen:
+\begin{description}
+ \item[\texttt{void printCars(std::vector$<$Car$>\&$ cars)}] Bekommt eine Referenz auf einen Vektor von \texttt{Car} Objekten und gibt alle Autos in der Form \\
+ \texttt{<brand>: <speed> (<color>)$\setminus$n} aus. 
+ 
+   \textbf{Beispiel}  {\footnotesize\begin{verbatim}Audi: 280 (black)
+Audi 280 silver
+VW 220 silver\end{verbatim}}
+ 
+ 
+ \item[\texttt{void sortCars(std::vector$<$Car$>\&$ cars)}] Bekommt eine Referenz auf einen Vektor von \texttt{Car} Objekten und sortiert diese absteigend nach Geschwindigkeit.
+ 
+ \textbf{Beispiel} {\footnotesize\begin{verbatim}Audi: 330 (red)
+BMW: 310 (white) 
+BMW: 310 (black)\end{verbatim}}
+ 
+ \item[\texttt{void removeDuplicateCars(std::vector$<$Car$>\&$ cars)}] Bekommt eine Referenz auf einen Vektor von \texttt{Car} Objekten und entfernt alle doppelten Autos. Autos sind gleich, wenn sowohl die Marke (\texttt{brand}) als auch die Geschwindigkeit (\texttt{speed}) übereinstimmen. (Es ist in Ordnung, wenn die Autos dabei auch sortiert werden.)
+ 
+ \textbf{Beispiel} {\footnotesize\begin{verbatim}Audi: 330 (red)
+BMW: 310 (white)
+Audi: 280 (black)\end{verbatim}}
+ 
+\end{description}
+
+Ist die Anzahl der Parameter falsch, soll ``\texttt{Usage: ./cars <car file>}'' ausgegeben werden. Sollte eine Zeile in der Datei ungültig sein, soll sie ignoriert werden.
+
+\vspace{1em}
+
+Beispiel für eine Auto-Liste \texttt{cars.txt}:
+\begin{lstlisting}[frame=single]
+Audi 280 black
+Audi 280 silver
+BMW 310 white
+VW 220 silver
+Audi 330 red
+VW 180 blue
+BMW 310 black
+VW 280 silver
+\end{lstlisting}
+
+
+\subsection*{Aufruf}
+\texttt{./cars <car list>}
+
+\subsection*{Bewertung}
+\begin{itemize}
+ \item Dokumentation und Programmierstil: 1 Punkt
+ \item Einhalten der OOP Konzepte: 1 Punkt
+ \item Struktur \& Korrektheit: 1 Punkt
+\end{itemize}
+
+\newpage
+
+
+\end{document}
