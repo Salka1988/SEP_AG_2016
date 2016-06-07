@@ -1,0 +1,5 @@
+* show ohne heroes
+* commands mit falschen argumenten
+* gainXP vor create
+* Memory Leaks
+

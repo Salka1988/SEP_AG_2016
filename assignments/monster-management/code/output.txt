@@ -1,0 +1,19 @@
+> spawn Ozma 65535
+> spawn Goomba 1
+> list
+Ozma:65535
+Goomba:1
+> damage 1
+Goomba is removed!
+> list
+Ozma:65534
+> damage 99
+> list
+Ozma:65435
+> damage 60000
+> list
+Ozma:5435
+> damage 6000
+Ozma is removed!
+> list
+> quit

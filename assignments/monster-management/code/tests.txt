@@ -1,0 +1,5 @@
+* list ohne monster
+* spawn mit falschen argumenten (kein integer als hp...)
+* damage vor spawn
+* Memory Leaks
+

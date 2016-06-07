@@ -1,0 +1,6 @@
+create Siegfried
+show
+gainXP 11
+create Arthos
+gainXP 1000
+quit

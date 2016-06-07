@@ -1,0 +1,12 @@
+spawn Ozma 65535
+spawn Goomba 1
+list
+damage 1
+list
+damage 99
+list
+damage 60000
+list
+damage 6000
+list
+quit

@@ -1,0 +1,13 @@
+> create Siegfried
+> show
+Siegfried (Level 1, 0 / 11 XP)
+> gainXP 11
+Siegfried leveled up!
+Siegfried (Level 2, 0 / 12 XP)
+> create Arthos
+> gainXP 1000
+Siegfried leveled up!
+Siegfried (Level 13, 25 / 413 XP)
+Arthos leveled up!
+Arthos (Level 13, 14 / 413 XP)
+> quit
