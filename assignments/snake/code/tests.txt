@@ -1,0 +1,8 @@
+Befehle:
+  * udlr (Richtungen)
+  * quit
+
+Tests:
+  * Kurven
+  * Snake gegen Wand
+  * Snake Rückwärts

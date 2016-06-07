@@ -1,0 +1,105 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+\usepackage{hyperref}
+\usepackage{multicol}
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{../../template/tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Snake}
+
+Entwickeln Sie eine vereinfachte Version des Spieles Snake\\ (Bsp.: \url{http://playsnake.org/}).
+Wie im Basisbeispiel soll ein zweidimensionales Spielfeld angelegt werden. Das Spielfeld ist dabei
+10x10 Felder groß. Die Spalten sollen für die Ausgabe mit einem Leerzeichen getrennt werden.\\
+Jedes Feld wird Anfangs mit einem Leerzeichen initialisiert mit Ausnahme der Felder
+am äußersten Rand. Die Randfelder sollen eine Wand mit dem Zeichen \texttt{\#} (ASCII 35) darstellen.\\
+Der Schlangenkörper wird mit dem Zeichen \texttt{O} (ASCII 79) gefüllt, wobei der Schlangenkopf mit dem Zeichen 
+\texttt{X} (ASCII 88) dargestellt wird. Die Bewegungsbefehle sind die gleichen wie beim Basisbeispiel:\\
+\texttt{u} (ASCII 117) für nach oben, \texttt{d} (ASCII 100) für nach unten, \texttt{l} (ASCII 108) für nach links und 
+\texttt{r} (ASCII 114) für nach rechts. Mit dem Befehl \texttt{quit} soll das Spiel beendet werden.\\
+Die Größe und Startposition der Schlange soll wie in der ersten Ausgabe des Spielfeldes auf der Konsole sein.
+Es gibt keine Gewinnbedingung. Bei Auftreten von spielinternen Fehlern soll Nichts geschehen.
+
+
+\begin{multicols}{2}
+
+\subsection*{Beispiel}
+\begin{verbatim}
+Input auf der Konsole: 
+sep> d
+sep> r
+sep> quit
+\end{verbatim}
+
+\subsubsection*{Ausgabe}
+
+\begin{verbatim}
+Konsolen Ausgabe:
+# # # # # # # # # # 
+#                 # 
+#                 # 
+#   O O X         # 
+#                 # 
+#                 # 
+#                 # 
+#                 # 
+#                 # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+#                 # 
+#                 # 
+#     O O         # 
+#       X         # 
+#                 # 
+#                 # 
+#                 # 
+#                 # 
+# # # # # # # # # # 
+# # # # # # # # # # 
+#                 # 
+#                 # 
+#       O         # 
+#       O X       # 
+#                 # 
+#                 # 
+#                 # 
+#                 # 
+# # # # # # # # # # 
+\end{verbatim}
+
+\end{multicols}
+
+
+\subsection*{Aufruf}
+\texttt{./snake}
+
+\subsection*{Bewertung}
+\begin{itemize}
+ \item Dokumentation und Programmierstil: 1 Punkt
+ \item Einhalten der OOP Konzepte: 1 Punkt
+ \item Struktur \& Korrektheit: 1 Punkt
+\end{itemize}
+
+\newpage
+
+
+\end{document}
