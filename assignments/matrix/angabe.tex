@@ -1,0 +1,62 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{../../template/tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Matrix}
+
+Schreibe ein einfaches Programm, das eine Matrix einliest und die transponierte Matrix in ein File schreibt. 
+
+Die Klasse soll einen Filenamen übernehmen, in dem die Matrix steht. Mit dem Befehl 'transpose' soll die Matrix transponiert und ins File 'transpose.txt' geschrieben werden. (Transponieren: 1. Zeile einer Matrix wird zur 1. Spalte, 2. Zeile zur 2.Spalte usw.)\\
+Wenn das File nicht gültig ist, soll 'invalid file' ausgegeben werden. Nicht gültig ist ein File, wenn nicht jede Zeile die gleiche Anzahl an Elementen hat.
+
+\subsection*{Beispiel}
+\begin{verbatim}
+int main() {
+    Matrix *matrix = new Matrix("matrix.txt");
+    matrix->transpose();
+    return 0;
+}
+\end{verbatim}
+\subsubsection*{matrix.txt} 
+\begin{verbatim}
+1 2 3 4
+5 6 7 8
+9 10 11 12
+\end{verbatim}
+\subsubsection*{transpose.txt} 
+\begin{verbatim}
+1 5 9 
+2 6 10 
+3 7 11 
+4 8 12 
+\end{verbatim}
+\subsection*{Aufruf}
+\texttt{./matrix}
+
+\subsection*{Bewertung}
+Dokumentation \& Programmierstil,  Dokumentation \& Programmierstil, und Struktur \& Korrektheit (je 1 Punkt)
+\newpage
+
+
+\end{document}
