@@ -1,0 +1,8 @@
+Befehle:
+  * "<x> <y>" Kreuz setzen
+  * quit
+
+Tests:
+  * Kreuz auf besetztes Feld setzen
+  * Kreuz außerhalb des Spielfelds setzen oder falsche Koordinaten
+  * Setzen bei vollem Spielfeld

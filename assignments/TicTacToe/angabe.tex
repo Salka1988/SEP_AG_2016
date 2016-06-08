@@ -1,0 +1,98 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+\usepackage{hyperref}
+\usepackage{multicol}
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{../../template/tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{TicTacToe}
+
+Entwickeln Sie eine vereinfachte Version des Spieles TicTacToe\\ (Bsp.: \url{http://playtictactoe.org/}).
+Es soll ein zweidimensionales Spielfeld angelegt werden. Das Spielfeld ist dabei
+3x3 Felder groß. Die Ausgabe des Spielfelds soll wie in der unten gezeigten Konsolenausgabe erfolgen.\\
+Das Spiel soll gegen den Computer gespielt werden können, wobei die KI die Token an zufällige Positionen setzen soll.\\
+Der Spieler besitzt den Token \texttt{X} (ASCII 88), der Computer den Token \texttt{O} (ASCII 79).
+Der Spieler beginnt das Spiel.
+Mit dem Befehl \texttt{quit} soll das Spiel beendet werden.\\
+Es gibt keine Gewinnbedingung. Bei Auftreten von spielinternen Fehlern kann eine Fehlermeldung ausgegeben werden,
+es soll aber normal weitergespielt werden können.
+
+\begin{multicols}{2}
+
+\subsection*{Beispiel}
+\begin{verbatim}
+Input auf der Konsole: 
+sep> 0 0
+sep> 1 0
+sep> 2 0
+sep> quit
+\end{verbatim}
+
+\subsubsection*{Ausgabe}
+
+\begin{verbatim}
+Konsolen Ausgabe:
+-------------
+|   |   |   |
+-------------
+|   |   |   |
+-------------
+|   |   |   |
+-------------
+-------------
+| X |   |   |
+-------------
+|   |   | O |
+-------------
+|   |   |   |
+-------------
+-------------
+| X | X | O |
+-------------
+|   |   | O |
+-------------
+|   |   |   |
+-------------
+Error: Cannot set Tile on occupied Field!
+
+
+
+\end{verbatim}
+
+\end{multicols}
+
+
+\subsection*{Aufruf}
+\texttt{./tictactoe}
+
+\subsection*{Bewertung}
+\begin{itemize}
+ \item Dokumentation und Programmierstil: 1 Punkt
+ \item Einhalten der OOP Konzepte: 1 Punkt
+ \item Struktur \& Korrektheit: 1 Punkt
+\end{itemize}
+
+\newpage
+
+
+\end{document}
