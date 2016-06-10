@@ -1,0 +1,79 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fuﬂzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespr‰ch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+ %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Kino}
+
+Entwickle eine einfache Software zur Reservierung von Kinositzpl‰tzen.
+
+
+\begin{description}
+ \item[reserve $<$row$>$ $<$seat$>$] 
+ Reserviere den gew¸nschten Platz.
+ \item[show] Zeige die Belegung des Saals an.
+\end{description}
+
+Der Kinosaal hat 6 Reihen zu je 5 Pl‰tzen.
+Es ist darauf zu achten, dass kein Platz mehrfach reserviert wird.
+Weiters muss darauf geachtet werden, dass kein Platz ausserhalb reserviert werden kann.
+ 
+
+\subsection*{Beispiel}
+\begin{verbatim}
+> show 
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+> reserve 1 2
+ok!
+> show 
+| |x| | | |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+| | | | | |
+> reserve 1 2
+ERR: occupied!
+> reserve 10 5
+ERR: out of bounds!
+\end{verbatim}
+
+\subsection*{Aufruf}
+\texttt{./kino}
+
+\subsection*{Bewertung}
+\begin{itemize}
+ \item Dokumentation und Programmierstil: 1 Punkt
+ \item Einhalten der OOP Konzepte: 1 Punkt
+ \item Struktur \& Korrektheit: 1 Punkt
+\end{itemize}
+
+\newpage
+
+
+\end{document}
