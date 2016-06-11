@@ -23,15 +23,38 @@
 
 \begin{document}
 
-\section*{Kurzer Titel}
+\section*{Random Guess}
 
-Beschreibung
+Ein kleines Zahlenratespiel. Der Benutzer gibt via Argumenten Liste ein unteres und ein oberes Limit sowie eine Höchstbegrenzung für die Versuche an. Dann wird geraten. Sollte der Benutzer die Zahl korrekt erraten haben, oder die Anzahl der Versuche verbraucht sein, wird das Programm beendet.
+Sollte als Anzahl für die Maximalen Versuche 0 eingegeben werden, darf der Benutzer unendlich oft raten.
 
-\subsection*{Beispiel}
+Wenn nur ein Argument angegeben wird, handelt es sich um den filenamen eines config files,
+welches das Minimum, Maximum und die Höchstzahl an Zügen beinhaltet:
+
+\subsection*{Savefile}
 \begin{verbatim}
-Input auf der Konsole, z.B.
-sep> command 1 2
+[int]max;[int]min;[uint]maxguesses:
+1;10;5
 \end{verbatim}
+
+
+\subsection*{Beispiel 1}
+\begin{verbatim}
+Guess a number between 1 and 10, 5 guesses remaining: 5
+Too high!
+Guess a number between 1 and 10, 4 guesses remaining: 2
+Too low!
+Guess a number between 1 and 10, 3 guesses remaining: 3
+Congratulations, you have guessed the number!
+\end{verbatim}
+
+
+\subsection*{Beispiel 2}
+\begin{verbatim}
+Guess a number between 1 and 3: 1
+Congratulations, you have guessed the number!
+\end{verbatim}
+
 
 Datei \texttt{datei.txt}:
 \begin{lstlisting}[frame=single]
@@ -48,7 +71,8 @@ Result: done!
 \end{verbatim}
 
 \subsection*{Aufruf}
-\texttt{./ag config.txt}
+\texttt{./ag config.txt}\\
+\texttt{./ag [int] [int] [uint]}
 
 \subsection*{Bewertung}
 \begin{itemize}
