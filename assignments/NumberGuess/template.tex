@@ -31,11 +31,10 @@ Sollte als Anzahl für die Maximalen Versuche 0 eingegeben werden, darf der Benu
 Wenn nur ein Argument angegeben wird, handelt es sich um den filenamen eines config files,
 welches das Minimum, Maximum und die Höchstzahl an Zügen beinhaltet:
 
-\subsection*{Savefile}
-\begin{verbatim}
-[int]max;[int]min;[uint]maxguesses:
-1;10;5
-\end{verbatim}
+Datei \texttt{sample.cfg}:
+\begin{lstlisting}[frame=single]
+1 10 5
+\end{lstlisting}
 
 
 \subsection*{Beispiel 1}
@@ -56,22 +55,9 @@ Congratulations, you have guessed the number!
 \end{verbatim}
 
 
-Datei \texttt{datei.txt}:
-\begin{lstlisting}[frame=single]
-Lorem
-Ipsum
-\end{lstlisting}
-
-
-
-\subsubsection*{Ausgabe}
-\begin{verbatim}
-Konsolen Ausgabe, z.B.
-Result: done!
-\end{verbatim}
 
 \subsection*{Aufruf}
-\texttt{./ag config.txt}\\
+\texttt{./ag sample.cfg}\\
 \texttt{./ag [int] [int] [uint]}
 
 \subsection*{Bewertung}

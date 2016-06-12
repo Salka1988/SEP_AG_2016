@@ -1,6 +1,7 @@
 #include <iostream>
 #include <random>
 #include <string>
+#include <fstream>
 
 
 class RandomGuesser
@@ -9,11 +10,9 @@ public:
 
 	enum CLOSENESS
 	{
-		eMuchTooHigh,
 		eTooHigh,
 		eMatch,
 		eTooLow,
-		eMuchTooLow,
 		eNumGuessesExceeded,
 		eUndefined
 	};
@@ -25,6 +24,17 @@ public:
 		, num_guesses_(0)
 		, max_guesses_(max_guesses)
 	{
+		std::default_random_engine  random_engine;
+		std::uniform_int_distribution<int> dist(min_, max_);
+		random_num_ = dist(random_engine);
+	}
+
+	RandomGuesser(std::string filename)
+	{
+		std::fstream file("testfile.cfg");
+		file >> min_ >> max_ >> max_guesses_;
+		file.close();
+
 		std::default_random_engine  random_engine;
 		std::uniform_int_distribution<int> dist(min_, max_);
 		random_num_ = dist(random_engine);
@@ -56,10 +66,6 @@ public:
 		{
 		case eMatch:
 			return "Congratulations, you have guessed the number!";
-		case eMuchTooHigh:
-			return "Much too high!";
-		case eMuchTooLow:
-			return "Much too low!";
 		case eTooHigh:
 			return "Too high!";
 		case eTooLow:
@@ -74,7 +80,7 @@ public:
 
 	}
 
-	CLOSENESS operator()(int guessed)
+	CLOSENESS takeGuess(int guessed)
 	{
 		++num_guesses_;
 
@@ -83,10 +89,6 @@ public:
 
 		if (guessed == random_num_)
 			return eMatch;
-		if (guessed > max_)
-			return eMuchTooHigh;
-		if (guessed < min_)
-			return eMuchTooLow;
 		if (guessed < random_num_)
 			return eTooLow;
 		if (guessed > random_num_)
@@ -105,49 +107,39 @@ private:
 
 };
 
-int main()
+int main(int argc, char ** argv)
 {
-	int min = 0;
-	int max = 0;
-	int max_guesses = 0;
+	RandomGuesser * game;
 
-	std::cout << "::: Random Number Guesser :::" << std::endl;
-	std::cout << "Please enter the minimum value: ";
-	std::cin >> min;
+	if (argc == 2)
+		game = new RandomGuesser(argv[1]);
 
-	std::cout << "Please enter the maximum value: ";
-	std::cin >> max;
+	else if (argc == 4)
+		game = new RandomGuesser(atoi(argv[1]), atoi(argv[2]), atoi(argv[3]));
 
-	std::cout << "Please enter the maximum guesses (0 for unlimited): ";
-	std::cin >> max_guesses;
-	std::cout << std::endl;
-
-	if (min >= max)
+	else
 	{
-		std::cout << "The minimum value must be smaller than the maximum value!" << std::endl;
+		std::cout << "Wrong usage" << std::endl;
 		return 0;
 	}
-
-	RandomGuesser game(min, max, max_guesses);
 
 	RandomGuesser::CLOSENESS state = RandomGuesser::eUndefined;
 	while (state != RandomGuesser::eMatch && state != RandomGuesser::eNumGuessesExceeded)
 	{
 		int number = 0;
-		std::cout << "Guess a number between " << game.getMin() << " and " << game.getMax();
+		std::cout << "Guess a number between " << game->getMin() << " and " << game->getMax();
 		
-		if (game.getMaxGuesses() != 0)
-			std::cout << ", " << game.getMaxGuesses() - game.getNumGuesses() << " guesses remaining: ";
+		if (game->getMaxGuesses() != 0)
+			std::cout << ", " << game->getMaxGuesses() - game->getNumGuesses() << " guesses remaining: ";
 		else
 			std::cout << ": ";
 
 		std::cin >> number;
 
-		state = game(number);
+		state = game->takeGuess(number);
 
-		std::cout << game.getStringForState(state) << std::endl;
+		std::cout << game->getStringForState(state) << std::endl;
 	}
-
 
 	return 0;
 
