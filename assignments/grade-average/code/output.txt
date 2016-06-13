@@ -1,0 +1,17 @@
+> create SuperStudent
+> create HauptsacheDurch
+> add SuperStudent Analysis 1.0
+> add SuperStudent SEP 2.0
+> add HauptsacheDurch NRLA 4.0
+> add HauptsacheDurch Messtechnik 5.0
+> show
+HauptsacheDurch
+NRLA: 4
+Messtechnik: 5
+SuperStudent
+Analysis: 1
+SEP: 2
+> average
+Grade average of HauptsacheDurch: 4.5
+Grade average of SuperStudent: 1.5
+> quit

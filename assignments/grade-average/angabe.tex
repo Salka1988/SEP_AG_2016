@@ -1,0 +1,69 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{../../template/tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Notenschnitt-Rechner}
+
+Schreibe ein einfaches Programm um den Notenschnitt mehrerer Studenten zu berechnen. Die Studenten werden mit Namen erstellt, und jede Lehrveranstaltung besitzt einen Namen und die Endnote.
+
+
+\begin{description}
+ \item[create $<$studentName$>$] Erstellt einen neuen Studenten mit dem Namen $studentName$. 
+ \item[add $<$studentName$>$ $<$subjectName$>$ $<$subjectGrade$>$] Der Student mit Namen $studentName$ bekommt die Note $<$subjectGrade$>$ für die Lehrveranstaltung $<$subjectName$>$.
+ \item[show] Listet alle Studenten mit deren Noten auf. 
+ \item[average] Listet den Notendurchschnitt aller Studenten auf.
+\end{description}
+Bei Fehlerfällen (Falsche Parameter, kein Held existiert...) soll nichts ausgegeben werden.
+Bei der Eingabe von \texttt{quit} oder EOF soll das Programm beendet werden.
+
+\subsection*{Beispiel}
+\begin{verbatim}
+> create SuperStudent
+> create HauptsacheDurch
+> add SuperStudent Analysis 1.0
+> add SuperStudent SEP 2.0
+> add HauptsacheDurch NRLA 4.0
+> add HauptsacheDurch Messtechnik 5.0
+> show
+HauptsacheDurch
+NRLA: 4
+Messtechnik: 5
+SuperStudent
+Analysis: 1
+SEP: 2
+> average
+Grade average of HauptsacheDurch: 4.5
+Grade average of SuperStudent: 1.5
+> quit
+\end{verbatim}
+
+\subsection*{Aufruf}
+\texttt{./grade-average}
+
+\subsection*{Bewertung}
+Dokumentation \& Programmierstil,  Dokumentation \& Programmierstil, und Struktur \& Korrektheit (je 1 Punkt)
+\newpage
+
+
+\end{document}

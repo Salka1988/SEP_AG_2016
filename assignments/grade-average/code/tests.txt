@@ -1,0 +1,5 @@
+* show ohne students
+* average ohne students
+* commands mit falschen argumenten
+* Memory Leaks
+
