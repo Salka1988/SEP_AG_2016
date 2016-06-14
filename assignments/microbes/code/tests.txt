@@ -1,0 +1,6 @@
+* Memory Management
+* Ungültige Anzahl Parameter
+* Ungültiges Dateiformat (Buchstaben statt Zahlen, anderer Typ)
+* Negative Zeiteinheit
+* Zeiteinheit ist keine Zahl
+

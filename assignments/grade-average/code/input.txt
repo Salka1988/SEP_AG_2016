@@ -1,0 +1,9 @@
+create SuperStudent
+create HauptsacheDurch
+add SuperStudent Analysis 1.0
+add SuperStudent SEP 2.0
+add HauptsacheDurch NRLA 4.0
+add HauptsacheDurch Messtechnik 5.0
+show
+average
+quit

@@ -1,0 +1,78 @@
+\documentclass[a4paper,10pt]{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{subfigure}
+\usepackage{fancyhdr}
+\usepackage{listings}
+\usepackage{ gensymb }
+
+
+%opening
+
+\pagestyle{fancy} %eigener Seitenstil
+\fancyhf{} %alle Kopf- und Fußzeilenfelder bereinigen
+\fancyhead[L]{SEP Abgabegespräch SS2015/16} %Kopfzeile links
+\fancyhead[C]{} %zentrierte Kopfzeile
+\fancyhead[R]{\includegraphics[width=1cm]{../../template/tugraz_bw}} %Kopfzeile rechts
+\renewcommand{\headrulewidth}{0.4pt} %obere Trennlinie
+\fancyfoot[C]{} %Seitennummer
+\renewcommand{\footrulewidth}{0.4pt} %untere Trennlinie
+
+
+\lstset{language=C++, basicstyle=\ttfamily\tiny}  
+
+\begin{document}
+
+\section*{Vokabeltrainer}
+
+Schreibe ein einfaches Programm, mit welchem Vokabeln gelernt werden können. Dabei liest das Programm die Vokabeln aus einer Wörterbuchdatei ein und der Benutzer soll die korrekte Übersetzung des Wortes eingeben. Die Wörterbuchdatei hat folgendes Format: \texttt{<Englisches Wort> <Deutsches Wort>}.\newline
+Beispiel für eine Liste \texttt{vocabulary.txt}:
+\begin{lstlisting}[frame=single]
+hello hallo
+house haus
+bell klingel
+pen stift
+cat katze
+\end{lstlisting}
+
+Folgende Befehle stehen zur Verfügung
+\begin{description}
+ \item[quit]: Beendet das Programm.
+ \item[next $<$language$>$]: Gibt das nächste Wort in der gewählten Sprache aus.
+ \item[answer $<$word$>$]: Lösung des Benutzers.
+ \item[help]: Lösung wird ausgegeben, wird als falsch bewertet.
+ \item[show progress]: Zeigt die Anzahl der verbleibenden Wörter und die Anzahl der richtigen und falschen Wörter.
+\end{description}
+Zu beachten ist, dass die Reihenfolge der Wörter zufällig sein soll, ein erneuter Programmaufruf mit der gleichen Wörterbuchdatei soll eine neue Reihenfolge haben.
+
+\subsection*{Beispiel}
+\footnotesize
+\begin{verbatim}
+./trainer vocabulary.txt
+> next german
+hallo
+> answer hello
+Correct answer!
+> next english
+pen
+> answer hund
+Wrong answer!
+> next german
+klingel
+> help
+answer is: bell
+> show progress
+4 of 5 words are answered. 1 correct, 2 wrong
+> quit
+\end{verbatim}
+
+\subsection*{Bewertung}
+\begin{itemize}
+ \item Dokumentation und Programmierstil: 1 Punkt
+ \item Einhalten der OOP Konzepte: 1 Punkt
+ \item Struktur \& Korrektheit: 1 Punkt
+\end{itemize}
+\newpage
+
+
+\end{document}

@@ -1,0 +1,7 @@
+* Memory Management
+* Ungültige Anzahl Parameter
+* Korrekte Berechnung
+* OOP Konzept
+* Fehlerbehandlung beim File schreiben
+
+

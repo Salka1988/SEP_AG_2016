@@ -1,0 +1,5 @@
+* Memory Management
+* Ungültige Anzahl Parameter
+* Ungültiges Dateiformat (Buchstaben statt Zahlen, anderer Typ)
+* Wird der Imaginärteil richtig gesetzt?
+
