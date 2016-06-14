@@ -1,0 +1,8 @@
+Testen zum Beispiel anhand von Beispiel angabe!
+
+Achten auf:
+- Chatroom eigene Klasse?
+- User eigene Klasse?
+- User -> Chatroom mapping, wie durchgeführt?
+- Suche nach user in allen chatrooms, z.B. notwendig in write, wie durchgeführt?
+- Wie wurde beim Befehl write die speicherung der Message gehandhabt, also "write peter Text durch Leerzeichen getrennt"
