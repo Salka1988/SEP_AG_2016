@@ -1,11 +1,11 @@
-# SEP AG
-Beispiele für SEP Abgabegespräche.
+# SEP AG (2016)
+Dies sind alle Beispiele, die für die Softwareentwicklungs-Praktikum (SEP) Abgabegespräche 2016 verwendet wurden. 
+Das Repository wird offiziell von den Tutoren zur Übung zur Verfügung gestellt.
 
-Im Ordner `template/` ist ein LaTeX Template, das man für die Angabe verwenden kann. Jedes Beispiel soll in einem eigenen Unterordner im Ordner `assignments/` sein, mit der Struktur
+Jedes Beispiel ist in einem eigenen Unterordner im Ordner `assignments/`, mit der Struktur
 ```
   beispiel
    |
-   +- angabe.tex
    +- angabe.pdf
    +- code
        |
@@ -14,4 +14,8 @@ Im Ordner `template/` ist ein LaTeX Template, das man für die Angabe verwenden 
        +- tests.txt
 ```
 
-`angabe.pdf` ist für die Studenten, der `code/` Ordner sollte eine einfach Lösung enthalten, um die Schwierigkeit abzuschätzen. In `tests.txt` sind Hinweise notiert, was man testen bzw worauf man achten sollte, wenn man sich den Code der Studenten anschaut. 
+In `angabe.pdf` findet man die Beschreibung der Aufgabenstellung. Im Ordner `code/` sollte eine einfache Muster-Lösung zu finden sein (fehlt leider bei einigen Beispielen). 
+In `tests.txt` sind Hinweise notiert, was man testen bzw worauf man achten sollte. 
+
+Viel Spaß beim Üben und Programmieren,
+die SEP Tutoren 2016
