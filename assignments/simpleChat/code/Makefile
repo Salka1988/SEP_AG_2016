@@ -1,5 +1,5 @@
-all: simpleChat.cpp
-	g++ -Wall -std=c++11 -g simpleChat.cpp -o simpleChat
+all: solution.cpp
+	g++ -Wall -std=c++11 -g solution.cpp -o simpleChat
 fsanitize:
-	g++ -Wall -std=c++11 -fsanitize=address -g simpleChat.cpp -o simpleChat
+	g++ -Wall -std=c++11 -fsanitize=address -g solution.cpp -o simpleChat
 	

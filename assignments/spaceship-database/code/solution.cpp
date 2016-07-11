@@ -2,6 +2,7 @@
 #include <string>
 #include <vector>
 #include <sstream>
+#include <iterator>
 
 class Spaceship
 {
@@ -15,6 +16,7 @@ public:
 
 	Spaceship(const Spaceship & other) = delete;
 	void operator=(const Spaceship & other) = delete;
+        virtual ~Spaceship() {}
 
 	virtual void print() = 0;
 
